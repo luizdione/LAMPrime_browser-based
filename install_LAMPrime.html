@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Install LAMPrime</title>
+  <meta name="description" content="Install LAMPrime as an app on Windows, macOS, iOS, Android or Linux — one click, works offline, no store needed.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#5f4a69">
+  <link rel="icon" href="icons/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon-180.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="LAMPrime">
+  <meta name="mobile-web-app-capable" content="yes">
+  <style>
+    :root{--bg:#3a2f4a;--bg2:#5f4a69;--card:#2c2438;--text:#f2ecf7;--muted:#c9bcd8;--accent:#12a56b;--border:#4a3d5e}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);
+      background:linear-gradient(160deg,var(--bg),var(--bg2));min-height:100vh;padding:24px 16px}
+    .wrap{max-width:760px;margin:0 auto}
+    .hero{text-align:center;margin:8px 0 24px}
+    .hero img{width:112px;height:112px;filter:drop-shadow(0 8px 22px rgba(0,0,0,.45))}
+    h1{margin:14px 0 4px;font-size:26px}
+    .sub{color:var(--muted);margin:0 0 8px;font-size:15px}
+    .langbtn{background:transparent;border:1px solid var(--border);color:var(--muted);border-radius:8px;padding:5px 10px;cursor:pointer;font:inherit}
+    .cta{display:inline-flex;gap:10px;align-items:center;background:var(--accent);color:#fff;border:none;
+      border-radius:12px;padding:14px 22px;font-size:16px;font-weight:800;cursor:pointer;margin:10px 0;
+      box-shadow:0 6px 18px rgba(0,0,0,.4)}
+    .cta[disabled]{opacity:.55;cursor:default}
+    .note{color:var(--muted);font-size:13px;margin:2px 0 18px}
+    .cards{display:grid;gap:14px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px 18px}
+    .card.active{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+    .card h2{margin:0 0 8px;font-size:17px;display:flex;align-items:center;gap:8px}
+    .card ol{margin:6px 0 0;padding-left:20px;line-height:1.6}
+    .badge{font-size:11px;background:var(--accent);color:#fff;border-radius:20px;padding:2px 9px;font-weight:700}
+    a{color:#7fe3b6}
+    .foot{text-align:center;color:var(--muted);font-size:12px;margin-top:22px}
+    kbd{background:#1c1726;border:1px solid var(--border);border-radius:5px;padding:1px 6px;font-size:12px}
+    [data-lang]{display:none}
+    .open{display:inline-block;margin-top:6px;color:#7fe3b6;font-weight:700;text-decoration:none}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div style="text-align:right"><button class="langbtn" id="lang" type="button">Português</button></div>
+    <div class="hero">
+      <img src="icons/icon-512.png" alt="LAMPrime icon">
+      <h1>LAMPrime</h1>
+      <p class="sub" data-lang="en">Install the LAMP primer designer as an app — runs offline, keeps your sequences on your device.</p>
+      <p class="sub" data-lang="pt">Instale o desenhador de primers LAMP como aplicativo — funciona offline e mantém suas sequências no seu dispositivo.</p>
+      <div>
+        <button class="cta" id="install" type="button" disabled>
+          <span data-lang="en">Install app</span><span data-lang="pt">Instalar aplicativo</span>
+        </button>
+      </div>
+      <p class="note" id="hint">
+        <span data-lang="en">If the button is greyed out, use the manual steps for your platform below.</span>
+        <span data-lang="pt">Se o botão estiver desabilitado, use os passos manuais da sua plataforma abaixo.</span>
+      </p>
+      <a class="open" href="LAMPrime_en.html" data-lang="en">Open LAMPrime in the browser →</a>
+      <a class="open" href="LAMPrime.html" data-lang="pt">Abrir o LAMPrime no navegador →</a>
+    </div>
+
+    <div class="cards">
+      <div class="card" id="c-desktop">
+        <h2>🖥️ <span data-lang="en">Windows / macOS / Linux — Chrome or Edge</span><span data-lang="pt">Windows / macOS / Linux — Chrome ou Edge</span> <span class="badge" data-lang="en">desktop</span><span class="badge" data-lang="pt">desktop</span></h2>
+        <ol data-lang="en">
+          <li>Click <b>Install app</b> above, or the install icon (a small screen with a down-arrow) at the right of the address bar.</li>
+          <li>Confirm <b>Install</b>. LAMPrime opens in its own window and gets a Start-menu / Launchpad entry.</li>
+          <li>It works offline from then on.</li>
+        </ol>
+        <ol data-lang="pt">
+          <li>Clique em <b>Instalar aplicativo</b> acima, ou no ícone de instalação (uma telinha com seta para baixo) à direita da barra de endereço.</li>
+          <li>Confirme <b>Instalar</b>. O LAMPrime abre em janela própria e ganha atalho no menu Iniciar / Launchpad.</li>
+          <li>A partir daí, funciona offline.</li>
+        </ol>
+      </div>
+
+      <div class="card" id="c-ios">
+        <h2>📱 <span data-lang="en">iPhone / iPad — Safari</span><span data-lang="pt">iPhone / iPad — Safari</span> <span class="badge">iOS</span></h2>
+        <ol data-lang="en">
+          <li>Open this page in <b>Safari</b> (not Chrome).</li>
+          <li>Tap the <b>Share</b> button (the square with an up-arrow).</li>
+          <li>Choose <b>Add to Home Screen</b>, then <b>Add</b>. The LAMPrime icon appears on your Home Screen.</li>
+        </ol>
+        <ol data-lang="pt">
+          <li>Abra esta página no <b>Safari</b> (não no Chrome).</li>
+          <li>Toque no botão <b>Compartilhar</b> (o quadrado com seta para cima).</li>
+          <li>Escolha <b>Adicionar à Tela de Início</b> e depois <b>Adicionar</b>. O ícone do LAMPrime aparece na tela inicial.</li>
+        </ol>
+      </div>
+
+      <div class="card" id="c-android">
+        <h2>🤖 <span data-lang="en">Android — Chrome</span><span data-lang="pt">Android — Chrome</span> <span class="badge">Android</span></h2>
+        <ol data-lang="en">
+          <li>Tap <b>Install app</b> above, or open the <kbd>⋮</kbd> menu.</li>
+          <li>Choose <b>Install app</b> / <b>Add to Home screen</b>, then confirm.</li>
+        </ol>
+        <ol data-lang="pt">
+          <li>Toque em <b>Instalar aplicativo</b> acima, ou abra o menu <kbd>⋮</kbd>.</li>
+          <li>Escolha <b>Instalar aplicativo</b> / <b>Adicionar à tela inicial</b> e confirme.</li>
+        </ol>
+      </div>
+    </div>
+
+    <p class="foot">
+      <span data-lang="en">No app store, no account, no download of an installer. LAMPrime keeps working with no network after the first visit.</span>
+      <span data-lang="pt">Sem loja de aplicativos, sem conta, sem baixar instalador. O LAMPrime continua funcionando sem internet após a primeira visita.</span>
+    </p>
+  </div>
+
+  <script>
+    // idioma: detecta e permite alternar
+    function setLang(l){
+      document.documentElement.lang = l;
+      document.querySelectorAll('[data-lang]').forEach(el=>{ el.style.display = (el.getAttribute('data-lang')===l)?'':'none'; });
+      document.getElementById('lang').textContent = (l==='pt')?'English':'Português';
+    }
+    setLang((navigator.language||'en').toLowerCase().startsWith('pt')?'pt':'en');
+    document.getElementById('lang').onclick = ()=> setLang(document.documentElement.lang==='pt'?'en':'pt');
+
+    // destaca a plataforma detectada
+    const ua = navigator.userAgent;
+    let id = 'c-desktop';
+    if(/iPhone|iPad|iPod/i.test(ua) || (navigator.platform==='MacIntel' && navigator.maxTouchPoints>1)) id='c-ios';
+    else if(/Android/i.test(ua)) id='c-android';
+    const card = document.getElementById(id); if(card) card.classList.add('active');
+
+    // botão de instalação nativo (Chrome/Edge/Android)
+    let deferred;
+    const btn = document.getElementById('install');
+    window.addEventListener('beforeinstallprompt', (e)=>{ e.preventDefault(); deferred=e; btn.disabled=false; });
+    btn.addEventListener('click', async ()=>{ if(!deferred) return; btn.disabled=true; deferred.prompt(); await deferred.userChoice; deferred=null; });
+    window.addEventListener('appinstalled', ()=>{ btn.disabled=true; document.getElementById('hint').textContent='✓ Installed'; });
+
+    // registra o service worker (offline)
+    if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js').catch(()=>{}); }
+  </script>
+</body>
+</html>

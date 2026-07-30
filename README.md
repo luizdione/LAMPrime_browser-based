@@ -69,6 +69,21 @@ English.
 
 Live instance: https://www.ifrj-crj-geneticamolecular.online/aplicativos/LAMPrime/LAMPrime.html
 
+## Install as an app (install_LAMPrime)
+
+LAMPrime is a **PWA (Progressive Web App)** — install it as a real app on Windows,
+macOS, Linux, Android and iOS with one click, no store and no installer, and it keeps
+working **offline** after the first visit ([`install_LAMPrime.html`](install_LAMPrime.html)):
+
+- **Windows / macOS / Linux (Chrome or Edge)** — open the app and click the
+  **Install LAMPrime** button (bottom-right), or the install icon at the right of the
+  address bar; LAMPrime opens in its own window with a Start-menu / Launchpad entry.
+- **Android (Chrome)** — menu ⋮ → **Install app** / **Add to Home screen**.
+- **iPhone / iPad (Safari)** — **Share** → **Add to Home Screen**. *(iOS installs web
+  apps only this way; it does not allow downloadable `.exe`/`.app` installers.)*
+
+Live: <https://www.ifrj-crj-geneticamolecular.online/aplicativos/LAMPrime/install_LAMPrime.html>
+
 ## Validation
 
 `tools/concordance.py` is a deterministic, dependency-light script (standard

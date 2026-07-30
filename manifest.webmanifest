@@ -1,0 +1,23 @@
+{
+  "name": "LAMPrime — LAMP Primer Designer",
+  "short_name": "LAMPrime",
+  "description": "Auditable, browser-based LAMP primer designer. Runs entirely on your device — no upload, works offline.",
+  "id": "./LAMPrime_en.html",
+  "start_url": "./LAMPrime_en.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#5f4a69",
+  "theme_color": "#0A7E47",
+  "lang": "en",
+  "categories": ["education", "science", "productivity", "utilities"],
+  "icons": [
+    { "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "English version", "url": "./LAMPrime_en.html" },
+    { "name": "Versão em Português", "url": "./LAMPrime.html" }
+  ]
+}

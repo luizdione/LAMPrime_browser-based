@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>LAMPrime v2 — LAMP Primer Designer (IFRJ)</title>
   <meta name="description" content="LAMPrime v2: an auditable, browser-based LAMP primer designer validated against the primary thermodynamic literature, with unified Mg²⁺/dNTP speciation.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#0A7E47">
+  <link rel="icon" href="icons/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon-180.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="LAMPrime">
+  <meta name="mobile-web-app-capable" content="yes">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -385,5 +392,18 @@
   </div>
 
   <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) { addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(()=>{})); }
+    let __dp;
+    addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault(); __dp = e;
+      const b = document.createElement('button');
+      const pt = (document.documentElement.lang||'').toLowerCase().startsWith('pt');
+      b.textContent = pt ? '⬇ Instalar LAMPrime' : '⬇ Install LAMPrime';
+      b.style.cssText = 'position:fixed;right:16px;bottom:16px;z-index:99999;padding:11px 16px;border:none;border-radius:10px;background:#12a56b;color:#fff;font-weight:700;font-family:inherit;font-size:14px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.35)';
+      b.onclick = async () => { b.remove(); __dp.prompt(); await __dp.userChoice; __dp = null; };
+      document.body.appendChild(b);
+    });
+  </script>
 </body>
 </html>
