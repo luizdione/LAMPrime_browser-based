@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LAMPrime v2 — LAMP Primer Designer (IFRJ)</title>
+  <meta name="description" content="LAMPrime v2: an auditable, browser-based LAMP primer designer validated against the primary thermodynamic literature, with unified Mg²⁺/dNTP speciation.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="lw-container" role="application" aria-label="LAMPrime — LAMP Primer Designer">
+    <header class="lw-header">
+      <div class="lw-brand" style="justify-content: space-between; width:100%">
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div class="lw-logo" aria-hidden="true">L</div>
+          <div class="lw-title">
+            <h1 id="appTitle">LAMPrime</h1>
+          </div>
+        </div>
+        <a id="langToggle" class="lw-btn" href="LAMPrime.html" title="Versão em Português" role="button">Versão em Português</a>
+      </div>
+      <nav class="lw-tabs" role="tablist" aria-label="LAMPrime sections">
+        <button class="lw-tab is-active" role="tab" aria-selected="true" aria-controls="tab-entrada" id="tabbtn-entrada" data-i18n="tab.input">Entrada</button>
+        <button class="lw-tab" role="tab" aria-selected="false" aria-controls="tab-param" id="tabbtn-param" data-i18n="tab.params">Parâmetros</button>
+        <button class="lw-tab" role="tab" aria-selected="false" aria-controls="tab-res" id="tabbtn-res" data-i18n="tab.results">Resultados</button>
+        <button class="lw-tab" role="tab" aria-selected="false" aria-controls="tab-espec" id="tabbtn-espec" data-i18n="tab.spec">Especificidade</button>
+      </nav>
+    </header>
+
+    <main class="lw-main">
+      <!-- Entrada -->
+      <section class="lw-panel is-active" id="tab-entrada" role="tabpanel" aria-labelledby="tabbtn-entrada">
+        <div class="lw-card">
+          <h2 data-i18n="seq.h2">Sequência alvo</h2>
+          <p class="lw-help" data-i18n="seq.help">Cole a sequência (A, T, G, C) ou informe um identificador (ex.: GenBank).</p>
+          <div class="lw-input-row">
+            <label for="alvo-id" class="lw-label" data-i18n="id.label">Identificador (opcional)</label>
+            <input id="alvo-id" type="text" class="lw-input" data-i18n-ph="id.ph" placeholder="Ex.: NC_045512, MN908947, etc.">
+          </div>
+          <div class="lw-input-row">
+            <label for="alvo-seq" class="lw-label" data-i18n="seq.label">Sequência</label>
+            <textarea id="alvo-seq" class="lw-textarea" data-i18n-ph="seq.ph" placeholder="Cole aqui a sequência de DNA..." spellcheck="false"></textarea>
+          </div>
+          <div class="lw-actions">
+            <label class="lw-file-btn">
+              <input id="file-fasta" type="file" accept=".fa,.fasta,.txt" hidden>
+              <span data-i18n="btn.fasta">Carregar FASTA</span>
+            </label>
+            <button id="btn-limpar" class="lw-btn ghost" data-i18n="btn.clear">Limpar</button>
+            <button id="btn-executar" class="lw-btn primary" data-i18n="btn.run">Gerar primers</button>
+          </div>
+        </div>
+
+        <div class="lw-card lw-info">
+          <h3 data-i18n="refs.h3">Referências e Publicações</h3>
+          <p class="lw-help" data-i18n="refs.lead">Referências-chave implementadas no algoritmo do LAMPrime:</p>
+          <ol class="lw-reflist">
+            <li>Notomi T, Okayama H, Masubuchi H, Yonekawa T, Watanabe K, Amino N, Hase T. Loop-mediated isothermal amplification of DNA. <i>Nucleic Acids Res.</i> 2000;28(12):e63.</li>
+            <li>Nagamine K, Hase T, Notomi T. Accelerated reaction by loop-mediated isothermal amplification using loop primers. <i>Mol Cell Probes.</i> 2002;16(3):223–229.</li>
+            <li>Tomita N, Mori Y, Kanda H, Notomi T. Loop-mediated isothermal amplification (LAMP) of gene sequences and simple visual detection of products. <i>Nat Protoc.</i> 2008;3(5):877–882.</li>
+            <li>SantaLucia J Jr. A unified view of polymer, dumbbell, and oligonucleotide DNA nearest-neighbor thermodynamics. <i>Proc Natl Acad Sci USA.</i> 1998;95(4):1460–1465.</li>
+            <li>von Ahsen N, Wittwer CT, Schütz E. Oligonucleotide melting temperatures under PCR conditions: nearest-neighbor corrections for Mg²⁺, deoxynucleotide triphosphate and dimethyl sulfoxide concentrations. <i>Clin Chem.</i> 2001;47(11):1956–1961.</li>
+          </ol>
+          <p class="lw-help" data-i18n="refs.tools">Regras de geometria dos primers: Eiken PrimerExplorer V5 (https://primerexplorer.jp/) e New England Biolabs — LAMP Primer Design (https://lamp.neb.com/).</p>
+          <p class="lw-help" data-i18n-html="refs.github">Código-fonte aberto (MIT): <a href="https://github.com/luizdione/LAMPrime_browser-based" target="_blank" rel="noopener" style="color:var(--accent);">github.com/luizdione/LAMPrime_browser-based</a></p>
+        </div>
+      </section>
+
+      <!-- Parâmetros -->
+      <section class="lw-panel" id="tab-param" role="tabpanel" aria-labelledby="tabbtn-param">
+        <div class="lw-grid">
+          <div class="lw-card">
+            <h2 data-i18n="params.basic.h2">Configurações básicas</h2>
+            <div class="lw-input-row">
+              <label class="lw-label" data-i18n="tm.inner.label">Tm alvo (F1c/B1c/LF/LB)</label>
+              <div class="lw-input" style="display:flex; gap:6px; background:transparent; border:none; padding:0;">
+                <input id="tm-f1c-b1c-lf-lb-min" type="number" class="lw-input" min="64" max="66" step="0.5" value="64" aria-label="Tm F1c/B1c/LF/LB min">
+                <input id="tm-f1c-b1c-lf-lb-max" type="number" class="lw-input" min="64" max="66" step="0.5" value="66" aria-label="Tm F1c/B1c/LF/LB max">
+              </div>
+              <span class="lw-suffix">°C</span>
+            </div>
+            <div class="lw-input-row">
+              <label class="lw-label" data-i18n="tm.outer.label">Tm alvo (F2/B2/F3/B3)</label>
+              <div class="lw-input" style="display:flex; gap:6px; background:transparent; border:none; padding:0;">
+                <input id="tm-f2-b2-f3-b3-min" type="number" class="lw-input" min="59" max="61" step="0.5" value="59" aria-label="Tm F2/B2/F3/B3 min">
+                <input id="tm-f2-b2-f3-b3-max" type="number" class="lw-input" min="59" max="61" step="0.5" value="61" aria-label="Tm F2/B2/F3/B3 max">
+              </div>
+              <span class="lw-suffix">°C</span>
+            </div>
+            <div class="lw-input-row">
+              <label class="lw-label" data-i18n="size.f3b3.label">Tamanho dos primers (F3/B3)</label>
+              <div class="lw-input" style="display:flex; gap:6px; background:transparent; border:none; padding:0;">
+                <input id="tam-f3-b3-min" type="number" class="lw-input" min="18" max="23" step="1" value="18" aria-label="F3/B3 size min">
+                <input id="tam-f3-b3-max" type="number" class="lw-input" min="18" max="23" step="1" value="23" aria-label="F3/B3 size max">
+              </div>
+              <span class="lw-suffix">nt</span>
+            </div>
+            <div class="lw-input-row">
+              <label class="lw-label" data-i18n="size.lflb.label">Tamanho dos primers (LF/LB)</label>
+              <div class="lw-input" style="display:flex; gap:6px; background:transparent; border:none; padding:0;">
+                <input id="tam-lf-lb-min" type="number" class="lw-input" min="18" max="23" step="1" value="18" aria-label="LF/LB size min">
+                <input id="tam-lf-lb-max" type="number" class="lw-input" min="18" max="23" step="1" value="23" aria-label="LF/LB size max">
+              </div>
+              <span class="lw-suffix">nt</span>
+            </div>
+            <div class="lw-input-row">
+              <label for="loop-seq" class="lw-label" data-i18n="loopseq.label">Linker do loop interno (FIP/BIP) — 5´TTTTTT 3´</label>
+              <input id="loop-seq" type="text" class="lw-input" value="TTTTTT" maxlength="12" placeholder="5´TTTTTT 3´">
+            </div>
+            <div class="lw-input-row">
+              <label class="lw-label" data-i18n="fip.label">Tamanho total do FIP (F1c-loop-F2)</label>
+              <div class="lw-input" style="display:flex; gap:6px; background:transparent; border:none; padding:0;">
+                <input id="tam-fip-min" type="number" class="lw-input" min="42" max="52" step="1" value="42" aria-label="FIP length min">
+                <input id="tam-fip-max" type="number" class="lw-input" min="42" max="52" step="1" value="52" aria-label="FIP length max">
+              </div>
+              <span class="lw-suffix">nt</span>
+            </div>
+            <div class="lw-input-row">
+              <label class="lw-label" data-i18n="bip.label">Tamanho total do BIP (B1c-loop-B2)</label>
+              <div class="lw-input" style="display:flex; gap:6px; background:transparent; border:none; padding:0;">
+                <input id="tam-bip-min" type="number" class="lw-input" min="42" max="52" step="1" value="42" aria-label="BIP length min">
+                <input id="tam-bip-max" type="number" class="lw-input" min="42" max="52" step="1" value="52" aria-label="BIP length max">
+              </div>
+              <span class="lw-suffix">nt</span>
+            </div>
+            <div class="lw-input-row">
+              <label for="gc-range" class="lw-label" data-i18n="gc.label">GC esperado</label>
+              <select id="gc-range" class="lw-input">
+                <option value="40-60" selected data-i18n="gc.opt.4060">40–60%</option>
+                <option value="40-65" data-i18n="gc.opt.4065">40–65% (teto canônico Eiken)</option>
+                <option value="50-60" data-i18n="gc.opt.5060">50–60% (ótimo)</option>
+                <option value="35-65" data-i18n="gc.opt.3565">35–65%</option>
+                <option value="45-55" data-i18n="gc.opt.4555">45–55%</option>
+              </select>
+            </div>
+            <div class="lw-input-row">
+              <label for="loops" class="lw-label" data-i18n="loops.label">Loop primers</label>
+              <select id="loops" class="lw-input">
+                <option value="auto" selected data-i18n="loops.opt.auto">Automático</option>
+                <option value="on" data-i18n="loops.opt.on">Forçar inclusão</option>
+                <option value="off" data-i18n="loops.opt.off">Não incluir</option>
+              </select>
+            </div>
+            <div class="lw-input-row">
+              <label for="lc-min" class="lw-label" data-i18n="lc.label">Complexidade linguística mínima (LC%)</label>
+              <input id="lc-min" type="number" class="lw-input" min="70" max="90" step="1" value="75" aria-describedby="lc-help">
+              <span class="lw-suffix">%</span>
+            </div>
+            <p id="lc-help" class="lw-help" style="text-align: justify;" data-i18n="lc.help">A complexidade linguística (LC%) mede a “riqueza de vocabulário” de uma sequência genética, a partir do número de combinações distintas de nucleotídeos (k-mers) observadas em relação ao total teoricamente possível, expresso em porcentagem (100% = máximo). Intervalo permitido: 70–90%. Valor padrão: 75%.</p>
+          </div>
+
+          <div class="lw-card">
+            <h2 data-i18n="react.h2">Condições de reação</h2>
+            <div class="lw-input-row">
+              <label for="na" class="lw-label">[Na⁺] (mM)</label>
+              <input id="na" type="number" class="lw-input" min="10" max="200" step="1" value="50">
+            </div>
+            <div class="lw-input-row">
+              <label for="mg" class="lw-label">[Mg²⁺] (mM)</label>
+              <input id="mg" type="number" class="lw-input" min="1" max="20" step="0.5" value="8">
+            </div>
+            <div class="lw-input-row">
+              <label for="dnTP" class="lw-label">[dNTP] (mM)</label>
+              <input id="dnTP" type="number" class="lw-input" min="0.1" max="5" step="0.1" value="1.4">
+            </div>
+          </div>
+
+          <div class="lw-card">
+            <h2 data-i18n="pen.h2">Penalidades e ranking</h2>
+            <div class="lw-input-row">
+              <label for="pen-lim-f1c-b1c" class="lw-label" data-i18n="pen.f1cb1c.label">Limite F1c/B1c</label>
+              <input id="pen-lim-f1c-b1c" type="number" class="lw-input" min="0" step="0.1" value="15">
+            </div>
+            <div class="lw-input-row">
+              <label for="pen-lim-f2-b2" class="lw-label" data-i18n="pen.f2b2.label">Limite F2/B2</label>
+              <input id="pen-lim-f2-b2" type="number" class="lw-input" min="0" step="0.1" value="20">
+            </div>
+            <div class="lw-input-row">
+              <label for="pen-lim-f3-b3" class="lw-label" data-i18n="pen.f3b3.label">Limite F3/B3</label>
+              <input id="pen-lim-f3-b3" type="number" class="lw-input" min="0" step="0.1" value="15">
+            </div>
+            <div class="lw-input-row">
+              <label for="max-sets" class="lw-label" data-i18n="maxsets.label">Número máximo de conjuntos a testar</label>
+              <input id="max-sets" type="number" class="lw-input" min="1" max="10000" step="1" value="300">
+            </div>
+            <p class="lw-help" style="text-align: justify;" data-i18n="pen.help">As penalidades servem apenas para ranquear os conjuntos de primers. Nenhum conjunto é reprovado por penalidade: os limites são referência de pontuação.</p>
+          </div>
+
+          <div class="lw-card">
+            <h2 data-i18n="geo.h2">Geometria dos alvos</h2>
+            <div class="lw-input-row">
+              <label for="dist-f2-b2" class="lw-label" data-i18n="geo.f2b2.label">Amplicon F2–B2 (5′F2→5′B2)</label>
+              <select id="dist-f2-b2" class="lw-input" aria-describedby="geo-help">
+                <option value="120-180" selected data-i18n="geo.opt.120180">120–180 bp</option>
+                <option value="120-160" data-i18n="geo.opt.120160">120–160 bp (PrimerExplorer/NEB)</option>
+                <option value="120-200" data-i18n="geo.opt.120200">120–200 bp</option>
+              </select>
+              <span class="lw-suffix">bp</span>
+            </div>
+            <div class="lw-input-row">
+              <label for="dist-f3-f2" class="lw-label" data-i18n="geo.f3f2.label">Gap F3–F2 (3′F3→5′F2)</label>
+              <select id="dist-f3-f2" class="lw-input">
+                <option value="0-60" selected data-i18n="geo.opt.060">0–60 bp</option>
+                <option value="0-20" data-i18n="geo.opt.020">0–20 bp (Eiken loopamp)</option>
+                <option value="0-40" data-i18n="geo.opt.040">0–40 bp</option>
+              </select>
+              <span class="lw-suffix">bp</span>
+            </div>
+            <div class="lw-input-row">
+              <label for="dist-f1-b1" class="lw-label" data-i18n="geo.f1b1.label">Distância F1–B1</label>
+              <select id="dist-f1-b1" class="lw-input">
+                <option value="0-60" selected>0–60 bp</option>
+              </select>
+              <span class="lw-suffix">bp</span>
+            </div>
+            <div class="lw-input-row">
+              <label for="dist-f2-f1" class="lw-label" data-i18n="geo.f2f1.label">Distância F2–F1</label>
+              <select id="dist-f2-f1" class="lw-input">
+                <option value="40-60" selected>40–60 bp</option>
+              </select>
+              <span class="lw-suffix">bp</span>
+            </div>
+            <div class="lw-input-row">
+              <label for="dist-b2-b1" class="lw-label" data-i18n="geo.b2b1.label">Distância B2–B1</label>
+              <select id="dist-b2-b1" class="lw-input">
+                <option value="40-60" selected>40–60 bp</option>
+              </select>
+              <span class="lw-suffix">bp</span>
+            </div>
+            <p id="geo-help" class="lw-help" style="text-align: justify;" data-i18n-html="geo.help">Geometria conforme o padrão Eiken PrimerExplorer V5 / NEB: <b>amplicon F2–B2 (5′F2→5′B2) = 120–180 bp</b> (região amplificada); <b>gap F3–F2 (3′F3→5′F2) = 0–60 bp</b>; loops F2–F1 e B2–B1 = 40–60 bp; centro F1–B1 = 0–60 bp.</p>
+          </div>
+
+          <div class="lw-card">
+            <h2 data-i18n="struct.h2">Estruturas secundárias (hibridação entre oligos)</h2>
+            <div class="lw-input-row">
+              <label for="t-react" class="lw-label" data-i18n="struct.treact">Temperatura de reação</label>
+              <input id="t-react" type="number" class="lw-input" min="50" max="72" step="0.5" value="63">
+              <span class="lw-suffix">°C</span>
+            </div>
+            <div class="lw-input-row">
+              <label for="hp-th" class="lw-label" data-i18n="struct.hpth">Limiar ΔG — hairpin</label>
+              <input id="hp-th" type="number" class="lw-input" max="0" step="0.1" value="-3.0">
+              <span class="lw-suffix">kcal/mol</span>
+            </div>
+            <div class="lw-input-row">
+              <label for="dimer-th" class="lw-label" data-i18n="struct.dimerth">Limiar ΔG — dímeros (homo/hetero)</label>
+              <input id="dimer-th" type="number" class="lw-input" max="0" step="0.1" value="-3.0">
+              <span class="lw-suffix">kcal/mol</span>
+            </div>
+            <div class="lw-input-row">
+              <label for="end-dg" class="lw-label" data-i18n="struct.enddg">Estabilidade de extremidade (ΔG ≤)</label>
+              <input id="end-dg" type="number" class="lw-input" max="0" step="0.1" value="-4.0">
+              <span class="lw-suffix">kcal/mol</span>
+            </div>
+            <p class="lw-help" style="text-align: justify;" data-i18n="struct.help">O LAMPrime avalia, à temperatura de reação, as estruturas que prejudicam a LAMP: hairpins (intramoleculares) e dímeros — hibridação entre oligos, homo e heterodímeros — pelo modelo nearest-neighbor (SantaLucia 1998). Conjuntos com qualquer estrutura mais estável (ΔG mais negativo) que o limiar são penalizados e descem no ranking; nenhum é reprovado. A estabilidade das extremidades de iniciação segue o critério Eiken (ΔG ≤ −4 kcal/mol por padrão).</p>
+          </div>
+        </div>
+        <div class="lw-actions end">
+          <button class="lw-btn ghost" id="btn-param-padrao" data-i18n="btn.restore">Restaurar padrão</button>
+          <button class="lw-btn primary" id="btn-aplicar-param" data-i18n="btn.apply">Aplicar parâmetros</button>
+        </div>
+        <div class="lw-card" style="text-align:center;">
+          <img src="fig2_lamp_architecture.png" alt="Arquitetura do conjunto de primers LAMP" style="max-width:100%; height:auto; border-radius:8px; border:1px solid var(--border);">
+          <p class="lw-help" data-i18n="img.caption">Esquema ilustrativo da disposição dos primers no método LAMP.</p>
+        </div>
+      </section>
+
+      <!-- Resultados -->
+      <section class="lw-panel" id="tab-res" role="tabpanel" aria-labelledby="tabbtn-res">
+        <div class="lw-card">
+          <h2 data-i18n="res.h2">Resultados</h2>
+          <div class="lw-results-empty" id="res-vazio" data-i18n="res.empty">
+            Ainda não há resultados. Gere primers para visualizá-los aqui.
+          </div>
+          <div class="lw-results" id="res-list" hidden></div>
+        </div>
+      </section>
+
+      <!-- Especificidade -->
+      <section class="lw-panel" id="tab-espec" role="tabpanel" aria-labelledby="tabbtn-espec">
+        <div class="lw-card">
+          <h2 data-i18n="spec.h2">Especificidade (triagem in silico)</h2>
+          <p class="lw-help" style="text-align:justify;" data-i18n="spec.help">Etapa opcional: tria os primers do conjunto melhor ranqueado (Conjunto #1) contra sequências de fundo, sinalizando primers que poderiam anelar e iniciar em organismos próximos. Usa semente 3′ exata + extensão (k-mer/alinhamento), não ML.</p>
+          <div class="lw-input-row">
+            <label for="spec-org" class="lw-label" data-i18n="spec.org.label">Organismo-alvo (busca NCBI)</label>
+            <input id="spec-org" type="text" class="lw-input" list="spec-org-list" autocomplete="off" data-i18n-ph="spec.org.ph" placeholder="Digite o nome da espécie (ex.: Babesia bigemina)">
+            <datalist id="spec-org-list"></datalist>
+          </div>
+          <div class="lw-input-row">
+            <label for="spec-genome" class="lw-label" data-i18n="spec.genome.label">Genoma / sequência (RefSeq)</label>
+            <select id="spec-genome" class="lw-input"><option value="" data-i18n="spec.genome.none">— busque um organismo acima —</option></select>
+          </div>
+          <div class="lw-actions">
+            <button id="btn-list-genomes" class="lw-btn ghost" data-i18n="btn.listgenomes">Listar genomas (NCBI)</button>
+            <button id="btn-add-genome" class="lw-btn ghost" data-i18n="btn.addgenome">Adicionar ao fundo</button>
+          </div>
+          <div class="lw-input-row">
+            <label class="lw-label" data-i18n="spec.examples">Cross-reactivity examples:</label>
+            <div class="lw-actions">
+              <button type="button" id="specEgAcentrale" class="lw-btn ghost">A. marginale → A. centrale (CP001759.1)</button>
+              <button type="button" id="specEgBbigemina" class="lw-btn ghost">B. bovis 18S → B. bigemina (KP710228.1)</button>
+            </div>
+            <p class="lw-help" style="font-style:italic;" data-i18n="spec.examplesHelp">Fills the congeneric organism's NCBI accession; generate primers, fetch the FASTA, then Screen.</p>
+          </div>
+          <div class="lw-input-row">
+            <label for="spec-acc" class="lw-label" data-i18n="spec.acc.label">Acessos NCBI (opcional)</label>
+            <input id="spec-acc" type="text" class="lw-input" data-i18n-ph="spec.acc.ph" placeholder="Ex.: NC_043815.1, AY648786.1 (vírgula/espaço)">
+          </div>
+          <div class="lw-actions">
+            <button id="btn-fetch-ncbi" class="lw-btn ghost" data-i18n="btn.fetchncbi">Buscar FASTA no NCBI</button>
+          </div>
+          <div class="lw-input-row">
+            <label for="spec-bg" class="lw-label" data-i18n="spec.bg.label">Sequências de fundo (FASTA)</label>
+            <textarea id="spec-bg" class="lw-textarea" data-i18n-ph="spec.bg.ph" placeholder="Cole um ou mais FASTA de fundo (genomas/genes de organismos próximos)..." spellcheck="false"></textarea>
+          </div>
+          <div class="lw-input-row">
+            <label for="spec-seed" class="lw-label" data-i18n="spec.seed.label">Âncora 3′ exata (semente)</label>
+            <input id="spec-seed" type="number" class="lw-input" min="8" max="20" step="1" value="13">
+            <span class="lw-suffix">nt</span>
+          </div>
+          <div class="lw-input-row">
+            <label for="spec-maxmm" class="lw-label" data-i18n="spec.maxmm.label">Máx. de mismatches (primer inteiro)</label>
+            <input id="spec-maxmm" type="number" class="lw-input" min="0" max="6" step="1" value="2">
+          </div>
+          <div class="lw-actions">
+            <button id="btn-screen" class="lw-btn primary" data-i18n="btn.screen">Triar especificidade</button>
+          </div>
+          <p class="lw-help" style="font-style:italic;" data-i18n="spec.privacy">Privacidade: a triagem roda no seu navegador e os primers não saem da página. A rede só é acessada se você usar “Buscar FASTA no NCBI” (são enviados apenas os identificadores públicos).</p>
+
+          <hr style="border:none; border-top:1px solid var(--border,#ddd); margin:16px 0;">
+          <h3 data-i18n="spec.mg.h3">Mg²⁺ sweep → heatmap</h3>
+          <p class="lw-help" style="text-align:justify;" data-i18n="spec.mg.help">Sweeps total MgSO₄ and computes, for each primer of Set #1, the on-target − off-target Tm margin (duplex Tm vs. best window in the background). Independent Tm path: free Mg from dNTP chelation + divalent correction (Owczarzy 2008) and internal-mismatch NN (Allawi/Peyret). Suggests the working [Mg²⁺] by maximin.</p>
+          <div class="lw-input-row">
+            <label for="spec-dntp" class="lw-label" data-i18n="spec.mg.dntp.label">Total dNTP (mM)</label>
+            <input id="spec-dntp" type="number" class="lw-input" min="0" max="20" step="0.1" value="1.6">
+            <div class="lw-actions">
+              <button type="button" id="specDntpPE" class="lw-btn ghost" title="low total dNTP (0.4 mM per nucleotide)">1.6 mM (low)</button>
+              <button type="button" id="specDntpNEB" class="lw-btn ghost" title="high total dNTP (1.4 mM per nucleotide)">5.6 mM (high)</button>
+            </div>
+          </div>
+          <div class="lw-input-row">
+            <label for="spec-mon" class="lw-label" data-i18n="spec.mg.mon.label">Monovalent Na⁺/K⁺ (mM)</label>
+            <input id="spec-mon" type="number" class="lw-input" min="0" max="500" step="1" value="50">
+          </div>
+          <div class="lw-input-row">
+            <label for="spec-trxn" class="lw-label" data-i18n="spec.mg.trxn.label">Reaction temperature (°C)</label>
+            <input id="spec-trxn" type="number" class="lw-input" min="50" max="75" step="0.5" value="63">
+          </div>
+          <div class="lw-input-row">
+            <label for="spec-mgmin" class="lw-label" data-i18n="spec.mg.mgmin.label">Mg²⁺ min (mM)</label>
+            <input id="spec-mgmin" type="number" class="lw-input" min="0" max="40" step="0.5" value="2">
+          </div>
+          <div class="lw-input-row">
+            <label for="spec-mgmax" class="lw-label" data-i18n="spec.mg.mgmax.label">Mg²⁺ max (mM)</label>
+            <input id="spec-mgmax" type="number" class="lw-input" min="0" max="40" step="0.5" value="10">
+          </div>
+          <div class="lw-input-row">
+            <label for="spec-mgstep" class="lw-label" data-i18n="spec.mg.mgstep.label">Mg²⁺ step (mM)</label>
+            <input id="spec-mgstep" type="number" class="lw-input" min="0.1" max="5" step="0.1" value="0.5">
+          </div>
+          <div class="lw-actions">
+            <button id="btn-mgsweep" class="lw-btn primary" data-i18n="spec.mg.run">Mg²⁺ sweep → heatmap</button>
+          </div>
+          <div style="overflow:auto; margin-top:10px;">
+            <canvas id="specMgHeatmap" width="10" height="10" style="max-width:100%;"></canvas>
+          </div>
+          <div id="specMgSuggest" style="margin-top:8px;"></div>
+        </div>
+        <div class="lw-card">
+          <h2 data-i18n="spec.res.h2">Resultado da triagem</h2>
+          <div class="lw-results-empty" id="spec-vazio" data-i18n="spec.empty">Sem triagem ainda. Gere primers (aba Entrada) e informe sequências de fundo.</div>
+          <div class="lw-results" id="spec-list" hidden></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="lw-footer">
+      <div>
+        <small>
+          <span data-i18n-html="footer.html"><strong>LAMPrime</strong> — desenho de primers LAMP no navegador (Tm nearest-neighbor SantaLucia 1998; geometria PrimerExplorer V5/NEB). Código aberto (MIT): <a href="https://github.com/luizdione/LAMPrime_browser-based" target="_blank" rel="noopener" style="color:var(--accent);">github.com/luizdione/LAMPrime_browser-based</a>.</span><br>
+          <span data-i18n="footer.lab">Laboratório de Genética Molecular — IFRJ. De-Melo, Luiz Dione Barbosa — Copyright 2025–2026.</span> · v1.3
+        </small>
+      </div>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

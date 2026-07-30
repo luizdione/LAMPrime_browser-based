@@ -1,0 +1,33 @@
+# =====================================================================
+#  LAMPrime — web app. Estrategia allowlist: ignora tudo e libera so o app,
+#  as ferramentas de reproducao e os docs. (material de paper/trabalho e
+#  backups ficam fora, sem serem nomeados.)
+# =====================================================================
+
+# 1) ignora tudo no nivel superior...
+/*
+
+# 2) ...e libera o app web publicavel (arquivos na raiz p/ deploy simples),
+#    os tools de reproducao, os docs e o CI de reproducao (.github/)
+!/.gitignore
+!/LICENSE
+!/README.md
+!/CHANGELOG.md
+!/index.html
+!/LAMPrime.html
+!/LAMPrime_en.html
+!/app.js
+!/styles.css
+!/fig2_lamp_architecture.png
+!/docs/
+!/tools/
+!/.github/
+
+# 3) artefatos transitorios
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

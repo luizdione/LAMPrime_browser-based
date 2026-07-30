@@ -1,0 +1,16 @@
+SARS-CoV-2 spike set (Prakash 2023) re-scored under LAMPrime's model
+at NEB 8 mM (default) vs PrimerExplorer 4 mM Mg2+.  dNTP 1.4 mM, Na 50 mM, oligo 50 nM.
+
+primer window    Tm@8mM  Tm@4mM  d(4-8)  off@8  off@4
+F3    (59, 61)    57.1    55.2   -1.95    1.9    3.8
+F2    (59, 61)    57.1    55.2   -1.88    1.9    3.8
+F1c   (64, 66)    60.4    58.4   -2.00    3.6    5.6
+B1c   (64, 66)    59.8    57.9   -1.90    4.2    6.1
+B2    (59, 61)    57.3    55.3   -1.97    1.7    3.7
+B3    (59, 61)    58.9    56.9   -1.92    0.1    2.1
+LF    (64, 66)    60.6    58.7   -1.95    3.4    5.3
+LB    (64, 66)    60.6    58.6   -1.98    3.4    5.4
+
+Inner-primer (F1c,B1c) mean offset below window:  8 mM = 3.9 C   4 mM = 5.9 C
+Conclusion: 4 mM Mg2+ LOWERS Tm (~2 C) and WIDENS the offset; the offset is a
+Tm-model/convention difference (PrimerExplorer vs SantaLucia/von Ahsen), not a Mg2+ effect.

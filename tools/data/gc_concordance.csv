@@ -1,0 +1,74 @@
+key,assay,organism,tool,ref,doi,amplicon_gc,oligo,length,gc,tm_lamprime,tm_bio5,d
+Pv_cox1,P. vivax cox1,Plasmodium vivax,NEB (HtLAMP-Pv),"Britton 2016, PLoS Negl Trop Dis 10:e0004443",10.1371/journal.pntd.0004443,29.9,F3,21,38.1,55.79,55.70,0.089
+Pv_cox1,P. vivax cox1,Plasmodium vivax,NEB (HtLAMP-Pv),"Britton 2016, PLoS Negl Trop Dis 10:e0004443",10.1371/journal.pntd.0004443,29.9,B3,25,28.0,56.15,56.05,0.092
+Pv_cox1,P. vivax cox1,Plasmodium vivax,NEB (HtLAMP-Pv),"Britton 2016, PLoS Negl Trop Dis 10:e0004443",10.1371/journal.pntd.0004443,29.9,FIP,40,40.0,72.54,72.57,-0.034
+Pv_cox1,P. vivax cox1,Plasmodium vivax,NEB (HtLAMP-Pv),"Britton 2016, PLoS Negl Trop Dis 10:e0004443",10.1371/journal.pntd.0004443,29.9,BIP,45,31.1,69.55,69.60,-0.047
+Pv_cox1,P. vivax cox1,Plasmodium vivax,NEB (HtLAMP-Pv),"Britton 2016, PLoS Negl Trop Dis 10:e0004443",10.1371/journal.pntd.0004443,29.9,LF,21,42.9,57.99,57.91,0.079
+Pv_cox1,P. vivax cox1,Plasmodium vivax,NEB (HtLAMP-Pv),"Britton 2016, PLoS Negl Trop Dis 10:e0004443",10.1371/journal.pntd.0004443,29.9,LB,22,36.4,55.59,55.51,0.084
+Bb_cytb,B. bovis cytb,Babesia bovis,PrimerExplorer V5,"Arnuphapprasert 2023, Sci Rep 13:1838",10.1038/s41598-023-29066-1,35.0,F3,23,39.1,59.51,59.44,0.073
+Bb_cytb,B. bovis cytb,Babesia bovis,PrimerExplorer V5,"Arnuphapprasert 2023, Sci Rep 13:1838",10.1038/s41598-023-29066-1,35.0,B3,21,38.1,57.46,57.36,0.098
+Bb_cytb,B. bovis cytb,Babesia bovis,PrimerExplorer V5,"Arnuphapprasert 2023, Sci Rep 13:1838",10.1038/s41598-023-29066-1,35.0,FIP,47,40.4,74.77,74.80,-0.039
+Bb_cytb,B. bovis cytb,Babesia bovis,PrimerExplorer V5,"Arnuphapprasert 2023, Sci Rep 13:1838",10.1038/s41598-023-29066-1,35.0,BIP,46,41.3,76.08,76.12,-0.033
+Eh_srehp,E. histolytica SREHP,Entamoeba histolytica,not stated (Foo set),"Foo 2020, BMC Biotechnol 20:34",10.1186/s12896-020-00629-8,32.3,F3,19,42.1,58.61,58.53,0.085
+Eh_srehp,E. histolytica SREHP,Entamoeba histolytica,not stated (Foo set),"Foo 2020, BMC Biotechnol 20:34",10.1186/s12896-020-00629-8,32.3,B3,23,39.1,59.58,59.51,0.069
+Eh_srehp,E. histolytica SREHP,Entamoeba histolytica,not stated (Foo set),"Foo 2020, BMC Biotechnol 20:34",10.1186/s12896-020-00629-8,32.3,FIP,49,34.7,74.48,74.61,-0.129
+Eh_srehp,E. histolytica SREHP,Entamoeba histolytica,not stated (Foo set),"Foo 2020, BMC Biotechnol 20:34",10.1186/s12896-020-00629-8,32.3,BIP,45,37.8,75.44,75.54,-0.099
+Eh_srehp,E. histolytica SREHP,Entamoeba histolytica,not stated (Foo set),"Foo 2020, BMC Biotechnol 20:34",10.1186/s12896-020-00629-8,32.3,LB,22,22.7,53.66,53.51,0.153
+Pf_18S,P. falciparum 18S,Plasmodium falciparum,PrimerExplorer V4,"Mohon 2014, Acta Trop 134:52",10.1016/j.actatropica.2014.02.016,34.5,F3,22,36.4,57.50,57.41,0.094
+Pf_18S,P. falciparum 18S,Plasmodium falciparum,PrimerExplorer V4,"Mohon 2014, Acta Trop 134:52",10.1016/j.actatropica.2014.02.016,34.5,B3,23,30.4,57.52,57.41,0.111
+Pf_18S,P. falciparum 18S,Plasmodium falciparum,PrimerExplorer V4,"Mohon 2014, Acta Trop 134:52",10.1016/j.actatropica.2014.02.016,34.5,FIP,43,46.5,77.42,77.49,-0.074
+Pf_18S,P. falciparum 18S,Plasmodium falciparum,PrimerExplorer V4,"Mohon 2014, Acta Trop 134:52",10.1016/j.actatropica.2014.02.016,34.5,BIP,44,40.9,76.45,76.60,-0.153
+Pf_18S,P. falciparum 18S,Plasmodium falciparum,PrimerExplorer V4,"Mohon 2014, Acta Trop 134:52",10.1016/j.actatropica.2014.02.016,34.5,LF,18,61.1,64.19,64.11,0.074
+Pf_18S,P. falciparum 18S,Plasmodium falciparum,PrimerExplorer V4,"Mohon 2014, Acta Trop 134:52",10.1016/j.actatropica.2014.02.016,34.5,LB,24,25.0,57.57,57.47,0.099
+Cov2_S,SARS-CoV-2 S,SARS-CoV-2,not stated,"Prakash 2023, MethodsX 10:102011",10.1016/j.mex.2023.102011,41.7,F3,19,42.1,57.12,57.03,0.086
+Cov2_S,SARS-CoV-2 S,SARS-CoV-2,not stated,"Prakash 2023, MethodsX 10:102011",10.1016/j.mex.2023.102011,41.7,B3,20,45.0,58.87,58.78,0.085
+Cov2_S,SARS-CoV-2 S,SARS-CoV-2,not stated,"Prakash 2023, MethodsX 10:102011",10.1016/j.mex.2023.102011,41.7,FIP,38,47.4,75.92,75.96,-0.040
+Cov2_S,SARS-CoV-2 S,SARS-CoV-2,not stated,"Prakash 2023, MethodsX 10:102011",10.1016/j.mex.2023.102011,41.7,BIP,38,44.7,74.93,74.95,-0.019
+Cov2_S,SARS-CoV-2 S,SARS-CoV-2,not stated,"Prakash 2023, MethodsX 10:102011",10.1016/j.mex.2023.102011,41.7,LF,22,40.9,60.65,60.59,0.066
+Cov2_S,SARS-CoV-2 S,SARS-CoV-2,not stated,"Prakash 2023, MethodsX 10:102011",10.1016/j.mex.2023.102011,41.7,LB,22,40.9,60.59,60.52,0.067
+Cov2_ORF1ab,SARS-CoV-2 ORF1ab,SARS-CoV-2,PrimerExplorer,"Huang 2020, Microb Biotechnol 13:950",10.1111/1751-7915.13586,44.1,F3,18,44.4,57.54,57.43,0.112
+Cov2_ORF1ab,SARS-CoV-2 ORF1ab,SARS-CoV-2,PrimerExplorer,"Huang 2020, Microb Biotechnol 13:950",10.1111/1751-7915.13586,44.1,B3,18,50.0,60.04,59.96,0.085
+Cov2_ORF1ab,SARS-CoV-2 ORF1ab,SARS-CoV-2,PrimerExplorer,"Huang 2020, Microb Biotechnol 13:950",10.1111/1751-7915.13586,44.1,FIP,47,38.3,75.00,75.08,-0.079
+Cov2_ORF1ab,SARS-CoV-2 ORF1ab,SARS-CoV-2,PrimerExplorer,"Huang 2020, Microb Biotechnol 13:950",10.1111/1751-7915.13586,44.1,BIP,39,51.3,78.58,78.63,-0.051
+Cov2_ORF1ab,SARS-CoV-2 ORF1ab,SARS-CoV-2,PrimerExplorer,"Huang 2020, Microb Biotechnol 13:950",10.1111/1751-7915.13586,44.1,LF,20,55.0,63.47,63.40,0.069
+Cov2_ORF1ab,SARS-CoV-2 ORF1ab,SARS-CoV-2,PrimerExplorer,"Huang 2020, Microb Biotechnol 13:950",10.1111/1751-7915.13586,44.1,LB,19,52.6,63.78,63.72,0.058
+Ec_malB,E. coli malB,Escherichia coli,PrimerExplorer v3,"Hill 2008, J Clin Microbiol 46:2800",10.1128/JCM.00152-08,50.5,F3,18,61.1,61.77,61.69,0.081
+Ec_malB,E. coli malB,Escherichia coli,PrimerExplorer v3,"Hill 2008, J Clin Microbiol 46:2800",10.1128/JCM.00152-08,50.5,B3,18,55.6,61.61,61.54,0.075
+Ec_malB,E. coli malB,Escherichia coli,PrimerExplorer v3,"Hill 2008, J Clin Microbiol 46:2800",10.1128/JCM.00152-08,50.5,FIP,40,55.0,80.48,80.54,-0.059
+Ec_malB,E. coli malB,Escherichia coli,PrimerExplorer v3,"Hill 2008, J Clin Microbiol 46:2800",10.1128/JCM.00152-08,50.5,BIP,42,50.0,80.12,80.18,-0.054
+Am_msp1b,A. marginale msp1b,Anaplasma marginale,not stated,"Giglioti 2019, Exp Appl Acarol 77:65",10.1007/s10493-018-0327-y,54.4,F3,20,50.0,61.60,61.53,0.072
+Am_msp1b,A. marginale msp1b,Anaplasma marginale,not stated,"Giglioti 2019, Exp Appl Acarol 77:65",10.1007/s10493-018-0327-y,54.4,B3,20,55.0,62.89,62.81,0.077
+Am_msp1b,A. marginale msp1b,Anaplasma marginale,not stated,"Giglioti 2019, Exp Appl Acarol 77:65",10.1007/s10493-018-0327-y,54.4,FIP,42,52.4,80.38,80.45,-0.076
+Am_msp1b,A. marginale msp1b,Anaplasma marginale,not stated,"Giglioti 2019, Exp Appl Acarol 77:65",10.1007/s10493-018-0327-y,54.4,BIP,37,56.8,81.55,81.57,-0.023
+Am_msp1b,A. marginale msp1b,Anaplasma marginale,not stated,"Giglioti 2019, Exp Appl Acarol 77:65",10.1007/s10493-018-0327-y,54.4,LF,19,52.6,62.53,62.46,0.070
+Am_msp1b,A. marginale msp1b,Anaplasma marginale,not stated,"Giglioti 2019, Exp Appl Acarol 77:65",10.1007/s10493-018-0327-y,54.4,LB,20,55.0,62.85,62.78,0.070
+Zikv_E,Zika virus E,Zika virus,PrimerExplorer V5,"Calvert 2017, PLoS One 12:e0185340",10.1371/journal.pone.0185340,54.0,F3,20,45.0,61.41,61.34,0.069
+Zikv_E,Zika virus E,Zika virus,PrimerExplorer V5,"Calvert 2017, PLoS One 12:e0185340",10.1371/journal.pone.0185340,54.0,B3,20,50.0,61.77,61.70,0.067
+Zikv_E,Zika virus E,Zika virus,PrimerExplorer V5,"Calvert 2017, PLoS One 12:e0185340",10.1371/journal.pone.0185340,54.0,FIP,41,56.1,81.29,81.31,-0.020
+Zikv_E,Zika virus E,Zika virus,PrimerExplorer V5,"Calvert 2017, PLoS One 12:e0185340",10.1371/journal.pone.0185340,54.0,BIP,41,56.1,81.45,81.49,-0.042
+Zikv_E,Zika virus E,Zika virus,PrimerExplorer V5,"Calvert 2017, PLoS One 12:e0185340",10.1371/journal.pone.0185340,54.0,LF,22,45.5,63.55,63.51,0.039
+Zikv_E,Zika virus E,Zika virus,PrimerExplorer V5,"Calvert 2017, PLoS One 12:e0185340",10.1371/journal.pone.0185340,54.0,LB,19,63.2,63.70,63.63,0.072
+Xc_TIVSS,X. citri XccLAMP219,Xanthomonas citri,PrimerExplorer V5,"Webster 2022, Microorganisms 10:1153",10.3390/microorganisms10061153,55.3,F3,19,57.9,62.75,62.68,0.074
+Xc_TIVSS,X. citri XccLAMP219,Xanthomonas citri,PrimerExplorer V5,"Webster 2022, Microorganisms 10:1153",10.3390/microorganisms10061153,55.3,B3,20,45.0,61.62,61.55,0.070
+Xc_TIVSS,X. citri XccLAMP219,Xanthomonas citri,PrimerExplorer V5,"Webster 2022, Microorganisms 10:1153",10.3390/microorganisms10061153,55.3,FIP,39,59.0,81.80,81.80,-0.001
+Xc_TIVSS,X. citri XccLAMP219,Xanthomonas citri,PrimerExplorer V5,"Webster 2022, Microorganisms 10:1153",10.3390/microorganisms10061153,55.3,BIP,40,55.0,80.48,80.56,-0.079
+Xc_TIVSS,X. citri XccLAMP219,Xanthomonas citri,PrimerExplorer V5,"Webster 2022, Microorganisms 10:1153",10.3390/microorganisms10061153,55.3,LF,19,63.2,64.95,64.88,0.077
+Xc_TIVSS,X. citri XccLAMP219,Xanthomonas citri,PrimerExplorer V5,"Webster 2022, Microorganisms 10:1153",10.3390/microorganisms10061153,55.3,LB,19,52.6,63.88,63.83,0.048
+Pa_ecfX,P. aeruginosa ecfX,Pseudomonas aeruginosa,PrimerExplorer V5,"He 2025, Biosensors 15:750",10.3390/bios15110750,64.2,F3,17,58.8,61.42,61.34,0.080
+Pa_ecfX,P. aeruginosa ecfX,Pseudomonas aeruginosa,PrimerExplorer V5,"He 2025, Biosensors 15:750",10.3390/bios15110750,64.2,B3,17,64.7,62.41,62.33,0.080
+Pa_ecfX,P. aeruginosa ecfX,Pseudomonas aeruginosa,PrimerExplorer V5,"He 2025, Biosensors 15:750",10.3390/bios15110750,64.2,FIP,39,61.5,81.69,81.72,-0.023
+Pa_ecfX,P. aeruginosa ecfX,Pseudomonas aeruginosa,PrimerExplorer V5,"He 2025, Biosensors 15:750",10.3390/bios15110750,64.2,BIP,38,60.5,81.54,81.57,-0.023
+Pa_ecfX,P. aeruginosa ecfX,Pseudomonas aeruginosa,PrimerExplorer V5,"He 2025, Biosensors 15:750",10.3390/bios15110750,64.2,LF,18,61.1,62.59,62.52,0.072
+Pa_ecfX,P. aeruginosa ecfX,Pseudomonas aeruginosa,PrimerExplorer V5,"He 2025, Biosensors 15:750",10.3390/bios15110750,64.2,LB,17,64.7,65.22,65.16,0.063
+Mtb_IS6110,M. tuberculosis IS6110,Mycobacterium tuberculosis,not stated,"Bentaleb 2016, BMC Infect Dis 16:517",10.1186/s12879-016-1864-9,65.0,F3,18,66.7,68.26,68.20,0.066
+Mtb_IS6110,M. tuberculosis IS6110,Mycobacterium tuberculosis,not stated,"Bentaleb 2016, BMC Infect Dis 16:517",10.1186/s12879-016-1864-9,65.0,B3,18,66.7,64.69,64.62,0.073
+Mtb_IS6110,M. tuberculosis IS6110,Mycobacterium tuberculosis,not stated,"Bentaleb 2016, BMC Infect Dis 16:517",10.1186/s12879-016-1864-9,65.0,FIP,37,67.6,84.82,84.83,-0.008
+Mtb_IS6110,M. tuberculosis IS6110,Mycobacterium tuberculosis,not stated,"Bentaleb 2016, BMC Infect Dis 16:517",10.1186/s12879-016-1864-9,65.0,BIP,37,67.6,83.14,83.10,0.043
+Mtb_IS6110,M. tuberculosis IS6110,Mycobacterium tuberculosis,not stated,"Bentaleb 2016, BMC Infect Dis 16:517",10.1186/s12879-016-1864-9,65.0,LF,19,52.6,59.76,59.68,0.078
+Mtb_IS6110,M. tuberculosis IS6110,Mycobacterium tuberculosis,not stated,"Bentaleb 2016, BMC Infect Dis 16:517",10.1186/s12879-016-1864-9,65.0,LB,18,61.1,65.62,65.55,0.072
+Mk_rpoB,M. kansasii rpoB,Mycobacterium kansasii,PrimerExplorer V4,"Chen 2021, Int Microbiol 24:75",10.1007/s10123-020-00143-z,66.8,F3,20,50.0,61.29,61.22,0.069
+Mk_rpoB,M. kansasii rpoB,Mycobacterium kansasii,PrimerExplorer V4,"Chen 2021, Int Microbiol 24:75",10.1007/s10123-020-00143-z,66.8,B3,17,58.8,59.67,59.59,0.087
+Mk_rpoB,M. kansasii rpoB,Mycobacterium kansasii,PrimerExplorer V4,"Chen 2021, Int Microbiol 24:75",10.1007/s10123-020-00143-z,66.8,FIP,37,64.9,83.52,83.53,-0.005
+Mk_rpoB,M. kansasii rpoB,Mycobacterium kansasii,PrimerExplorer V4,"Chen 2021, Int Microbiol 24:75",10.1007/s10123-020-00143-z,66.8,BIP,34,61.8,80.98,81.03,-0.049
+Mk_rpoB,M. kansasii rpoB,Mycobacterium kansasii,PrimerExplorer V4,"Chen 2021, Int Microbiol 24:75",10.1007/s10123-020-00143-z,66.8,LF,15,60.0,55.28,55.17,0.107
+Mk_rpoB,M. kansasii rpoB,Mycobacterium kansasii,PrimerExplorer V4,"Chen 2021, Int Microbiol 24:75",10.1007/s10123-020-00143-z,66.8,LB,15,60.0,56.21,56.11,0.105

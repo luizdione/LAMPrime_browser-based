@@ -1,0 +1,13 @@
+{
+  "suggested_mg_total": 5,
+  "gate": {
+    "on_lo": 59,
+    "on_hi": 66,
+    "off_hi": 63
+  },
+  "monovalent_mM": 50,
+  "dntp_mM": 1.6,
+  "oligo_nM": 50,
+  "fip_core": "GGACAATTGACATGGAATGATC",
+  "bip_core": "CTTCTCTAGATGTTAGTCTGCG"
+}

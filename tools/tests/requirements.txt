@@ -1,0 +1,5 @@
+# Reproducibility test suite for LAMPrime (tools/tests/).
+# Python 3.10+ and Node.js 18+ required. Pin BioPython so the reference Tm
+# values (SantaLucia 1998 DNA_NN3, Allawi/Peyret DNA_IMM1, Owczarzy 2008
+# saltcorr=7) are stable across environments.
+biopython==1.86
