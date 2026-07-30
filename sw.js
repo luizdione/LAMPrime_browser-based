@@ -1,6 +1,6 @@
 /* LAMPrime — service worker (offline-first PWA).
    Caches the app shell so LAMPrime works with no network after the first visit. */
-const CACHE = 'lamprime-v2.0.0';
+const CACHE = 'lamprime-v2.0.1';
 const CORE = [
   './', './index.html', './LAMPrime.html', './LAMPrime_en.html',
   './app.js', './styles.css', './install_LAMPrime.html', './manifest.webmanifest',
