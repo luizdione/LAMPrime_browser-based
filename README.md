@@ -119,5 +119,5 @@ fetched from NCBI only if its local file is missing.
 
 ## License
 
-MIT — see [LICENSE](LICENSE). © 2026 Luiz Dione Barbosa de Melo. Source code and
+MIT — see [LICENSE](LICENSE). © 2026 Luiz Dione Barbosa De-Melo. Source code and
 issues: https://github.com/luizdione/LAMPrime_browser-based
